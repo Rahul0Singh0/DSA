@@ -1,1 +1,1 @@
-fun(n-1),(n%2==0) ? fun(n/2) : INT_MAX,(n%3 == 0)?fun(n/3) : INT_MAX
+ 0
