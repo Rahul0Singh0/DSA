@@ -28,7 +28,7 @@ public:
 };
 int main() {
     vector<vector<int>> v{{1,3},{2,2},{3,1}};
-    int trucksize = 4+
+    int trucksize = 4;
     Solution S;
     int res = S.maximumUnits(v, trucksize);
     cout<<res;
