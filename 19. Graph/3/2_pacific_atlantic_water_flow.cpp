@@ -4,6 +4,7 @@
 using namespace std;
 class Solution {
 public:
+    // dir={{down},{up},{right},{left}}
     vector<vector<int>> dir = {{1,0}, {-1,0}, {0,1}, {0,-1}}; // i, j -> i+1, j -> i-1, j -> i, j-1 -> i, j+1
     int rows;
     int cols;
