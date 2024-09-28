@@ -76,6 +76,39 @@ public:
         }
         return result;
     }
+    // Above solution Leetcode cannot accept due to background reason
+    vector<vector<int>> updateMatrix(vector<vector<int>>& mat) {
+        const int dir[4][2] = {{1, 0}, {-1, 0}, {0, -1}, {0, 1}};
+        int n = mat.size();
+        int m = mat[0].size();
+        queue< pair<int, int> > qu;
+        vector<vector<bool>> seen(n, vector<bool>(m));
+        for(int i = 0; i < n; i++) {
+            for(int j = 0; j < m; j++) {
+                if(mat[i][j] == 0) {
+                    seen[i][j] = true;
+                    qu.emplace(i, j);
+                    // qu.push({i, j}); // also can use
+                }
+            }
+        } 
+
+        while(not qu.empty()) {
+            const auto [i, j] = qu.front();
+            qu.pop();
+            for(const auto& [di, dj] : dir) {
+                const int nr = di + i;
+                const int nc = dj + j;
+                if(nr < 0 or nc < 0 or nr >= n or nc >= m) continue; // out of index
+                if(seen[nr][nc]) continue; // already visit
+                mat[nr][nc] = mat[i][j] + 1;
+                qu.emplace(nr, nc);
+                seen[nr][nc] = true;
+            }
+        }
+
+        return mat;
+    }
 };
 int main() {
     vector<vector<int>> grid{{0, 0, 0}, {0, 1, 0}, {1, 1, 1}};
