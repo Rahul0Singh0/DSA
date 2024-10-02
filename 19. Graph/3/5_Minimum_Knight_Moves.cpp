@@ -15,10 +15,13 @@ struct Solution {
         qu.push({0, 0});
         int cnt = 0;
         while(not qu.empty()) {
+            // Traverse nodes level by level.
             for(int k = qu.size(); k > 0; --k) {
                 auto [i, j] = qu.front();
                 qu.pop();
+                // if reached the target cell
                 if(i == x && j == y) return cnt;
+                // visits all possible moves from current node
                 for(auto d : dir) {
                     int ni = d[0] + i;
                     int nj = d[1] + j;
