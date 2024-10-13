@@ -29,7 +29,17 @@ void Union(vector<int> &parent, vector<int> &sz, vector<int> &minimal, vector<in
     }
 }
 
+void file_i_o() {
+    ios_base::sync_with_stdio(0);
+    cin.tie(0);
+    cout.tie(0);
+}
+
 int main() {
+
+    // Fast I/O
+    file_i_o();
+
     int n, m;
     cin>>n>>m;
     // n is no. of elements, and m is no. of queries
