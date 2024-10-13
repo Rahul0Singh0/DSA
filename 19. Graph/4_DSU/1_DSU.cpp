@@ -13,7 +13,8 @@ int find(vector<int> &parent, int x) {
 void Union(vector<int> &parent, vector<int> &rank, int a, int b) {
     a = find(parent, a);
     b = find(parent, b);
-
+    if(a == b) return; // both a and b are same set
+    // Union by rank
     if(rank[a] >= rank[b]) {
         rank[a]++;
         parent[b] = a;
