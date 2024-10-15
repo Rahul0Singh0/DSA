@@ -28,6 +28,7 @@ int main() {
     // n is no. of elements, and m is no. of queries
     vector<int> parent(n+1);
     vector<int> rank(n+1, 0);
+    // initially each and every element has parent itself
     for(int i = 0; i <= n; i++) {
         parent[i] = i;
     }

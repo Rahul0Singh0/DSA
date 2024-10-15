@@ -9,7 +9,8 @@ using namespace std;
 struct Solution {
     int minKnightMoves(int x, int y) {
         queue<pair<int, int>> qu;
-        set<pair<int, int>> vis;
+        set<pair<int, int>> vis; // log(n)
+        // vector<vector<bool>> vis(700, vector<bool> (700)); // constant time 
         vector<vector<int>> dir = {{-1, 2}, {-1, -2}, {-2, -1}, {-2, 1}, {1, 2}, {1, -2}, {2, -1}, {2, 1}};
         vis.insert({0, 0});
         qu.push({0, 0});
