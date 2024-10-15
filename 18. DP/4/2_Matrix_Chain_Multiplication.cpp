@@ -36,16 +36,17 @@ int main() {
     }
     // DP with Tabulation (Bottom up)
     // Focus on Ordering
-    // for(int len = 3; len <= n; len++) {
-    //     for(int i = 0; i + len - 1 < n; i++) {
-    //         int j = i + len - 1;
-    //         dp[i][j] = INT_MAX;
-    //         for(int k = i+1; k < j; k++) {
-    //             dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j] + v[i]*v[k]*v[j]);
-    //         }
-    //     }
-    // }
+    for(int len = 3; len <= n; len++) {
+        for(int i = 0; i + len - 1 < n; i++) {
+            int j = i + len - 1;
+            dp[i][j] = INT_MAX;
+            for(int k = i+1; k < j; k++) {
+                dp[i][j] = min(dp[i][j], dp[i][k] + dp[k][j] + v[i]*v[k]*v[j]);
+            }
+        }
+    }
 
-    cout<<f(0, n-1, v)<<"\n";
+    // cout<<f(0, n-1, v)<<"\n";
+    cout<<dp[0][n-1]<<"\n";
     return 0;
 }
