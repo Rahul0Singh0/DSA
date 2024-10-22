@@ -1,3 +1,7 @@
+/**
+ * n = 4, ans = 5;
+ * n = 7, ans = 21
+ */
 #include <iostream>
 #include <cstring>
 using namespace std;
