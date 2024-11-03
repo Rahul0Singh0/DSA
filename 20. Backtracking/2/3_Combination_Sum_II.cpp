@@ -19,9 +19,8 @@ public:
         }
         // solution of repitition problem
         int j = i+1;
-        while(cand[j] == cand[j-1]) j++;
-        // avoid
-        f(cand, t, j, subset); // not picked
+        while(j < cand.size() and cand[j] == cand[j-1]) j++;
+        f(cand, t, j, subset); // avoid case (not picked)
     }
     vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
         result.clear();
