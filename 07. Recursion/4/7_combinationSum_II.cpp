@@ -2,6 +2,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 void combination(vector<int>& arr, int t) {
+    sort(arr.begin(), arr.end());
     // Method 1
     function<void(vector<int>,int,int)> f = [&](vector<int> combination, int rem, int idx) {
         if(rem == 0) {
@@ -13,9 +14,9 @@ void combination(vector<int>& arr, int t) {
         }
         if(rem < 0) return;
         for(int i = idx; i < arr.size(); i++) {
-            if(arr[i] == arr[i+1]) continue;
+            if(i > idx && arr[i] == arr[i-1]) continue;
             combination.push_back(arr[i]);
-            f(combination, rem-arr[i], i);
+            f(combination, rem-arr[i], i+1);
             combination.pop_back();
         }
     };
@@ -35,13 +36,16 @@ void combination(vector<int>& arr, int t) {
             dfs(comb, rem-arr[i], i+1); // take
             comb.pop_back();
         }
-        dfs(comb, rem, i+1); // avoid
+        // solution of repitition
+        int j = i+1;
+        while(j < arr.size() && arr[j] == arr[j-1]) j++;
+        dfs(comb, rem, j); // avoid
     };
     dfs({}, t, 0);
 }
 int main() {
-    vector<int> v{2,3,5,2,1};
-    int target = 4;
+    vector<int> v{10,1,2,7,6,1,5};
+    int target = 8;
     combination(v, target);
     return 0;
 }
