@@ -20,7 +20,7 @@ void combination(vector<int>& arr, int t) {
             combination.pop_back();
         }
     };
-    // f({}, t, 0);
+    f({}, t, 0);
     // Method 2
     function<void(vector<int>,int,int)> dfs = [&](vector<int> comb, int rem, int i) {
         if(rem == 0) {
@@ -41,7 +41,7 @@ void combination(vector<int>& arr, int t) {
         while(j < arr.size() && arr[j] == arr[j-1]) j++;
         dfs(comb, rem, j); // avoid
     };
-    dfs({}, t, 0);
+    // dfs({}, t, 0);
 }
 int main() {
     vector<int> v{10,1,2,7,6,1,5};
