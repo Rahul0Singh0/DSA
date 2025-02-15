@@ -17,8 +17,8 @@ int fun(vector<int>& arr) {
 }
 int main() {
     vector<int> arr{1,3,5,4,3,2,0};
-    for(int i = 0; i < arr.size()-1; i++) {
-        if(arr[i] >= arr[i+1]) {
+    for(int i = 1; i <= arr.size()-2; i++) {
+        if(arr[i] > arr[i+1] && arr[i] > arr[i-1]) {
             cout<<arr[i]<<endl;
             break;
         }
