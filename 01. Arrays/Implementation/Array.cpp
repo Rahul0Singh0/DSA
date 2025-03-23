@@ -50,7 +50,7 @@ public:
     const T& operator[](int index) {
         return arr[index];
     }
-    void resize(int n, T val = 0) {
+    void resize(int n, T val = 0 or nullptr) {
         T *temp = new T[n];
         for(int i = 0; i < Size; i++) {
             temp[i] = arr[i];
@@ -104,4 +104,11 @@ int main() {
     for(int i = 0; i < arr.size(); i++) {
         cout<<arr[i]<<" ";
     }
+    cout<<endl;
+    Array<char> ch;
+    ch.resize(5, 'a');
+    for(int i = 0; i < ch.size(); i++) {
+        cout<<ch[i]<<endl;
+    }
+    cout<<arr.front();
 }
