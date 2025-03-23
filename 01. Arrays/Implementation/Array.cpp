@@ -11,12 +11,12 @@ public:
     Array() {
         Size = 0;
         Capacity = 0;
-        arr = new T[size];
+        arr = new T[Size];
     }
     Array(int n) {
         Size = n;
         Capacity = n;
-        arr = new T[size];
+        arr = new T[Size];
     }
     ~Array() {
         delete[] arr;
