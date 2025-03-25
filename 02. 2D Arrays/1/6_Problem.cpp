@@ -1,5 +1,4 @@
 // Print transpose of the matrix
-
 #include <iostream>
 using namespace std;
 
