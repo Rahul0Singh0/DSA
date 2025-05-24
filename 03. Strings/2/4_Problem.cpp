@@ -33,6 +33,6 @@ int main () {
     Solution s;
     string sentence;
     getline(cin, sentence);
-    s.fun2(sentence);
+    s.fun3(sentence);
     return 0;
 }
