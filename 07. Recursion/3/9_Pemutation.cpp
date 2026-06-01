@@ -60,6 +60,6 @@ int main() {
     string str;
     cin>>str;
     // permutation(str, "");
-    f1(str, 0);
+    f(str);
     return 0;
 }

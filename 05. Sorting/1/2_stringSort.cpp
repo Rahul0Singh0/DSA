@@ -7,7 +7,7 @@ using namespace std;
 class Solution {
 public:
     void fun(string& str) {
-
+        
     }
 };
 int main() {

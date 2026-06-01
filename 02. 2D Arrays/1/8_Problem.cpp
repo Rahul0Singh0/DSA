@@ -4,7 +4,7 @@
 using namespace std;
 typedef vector<vector<int>> Vector;
 
-void fun(Vector& arr) {
+void transpose(Vector& arr) {
     int n = arr.size();
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
@@ -23,7 +23,7 @@ int main() {
             cin>>v[i][j];
         }
     }
-    fun(v);
+    transpose(v);
     for(int i = 0; i < n; i++) {
         for(int j = 0; j < n; j++) {
             cout<<v[i][j]<<" ";
