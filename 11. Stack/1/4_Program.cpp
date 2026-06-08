@@ -33,14 +33,14 @@ struct Stack {
             arr[--topIndex];
         }
 
-        T top() {
+        T top() const {
             if (empty()) {
                 throw std::out_of_range("Stack is empty");
             }
             return arr[topIndex];
         }
 
-        bool empty() {
+        bool empty() const {
             return topIndex == -1;
         }
 };
